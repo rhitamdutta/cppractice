@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+class maths
+{
+public:
+    int mm;
+    void in()
+    {
+        cout<<"enter marks in maths"<<endl;
+        cin>>mm;
+    }
+};
+class english:public maths
+{
+public:
+    int em;
+    void in()
+    {
+        cout<<"enter marks in english"<<endl;
+        cin>>em;
+    }
+
+};
+class science:public english
+{
+public:
+    int sm;
+    void in()
+    {
+        cout<<"enter marks in science"<<endl;
+        cin>>sm;
+    }
+};
+class result:public science
+{
+public:
+    string name;
+    void in()
+    {
+        cout << "enter name : "<<endl;
+        getline(cin,name);
+    }
+    void out()
+    {
+        cout<< name <<"     maths:"<<mm<<"      english:"<<em<<"        science:"<<sm<<"        total:"<<sm+em+mm<<endl;
+    }
+};
+int main()
+{
+    int a[5];
+    for(int i=0;i<=4;i++)
+    {
+        result r;
+        r.maths::in();
+        r.english::in();
+        r.science::in();
+        r.result::in();
+        r.result::out();
+    }
+}
