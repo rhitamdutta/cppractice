@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+class collage
+{
+    string n;
+public:
+    class teacher
+    {
+        string na;
+    public:
+        void in()
+        {
+            getline(cin,na);
+        }
+        }ob;
+        void in1()
+        {
+            getline(cin,n);
+            ob.in();
+        }
+};
+int main()
+{
+    collage c;
+    c.in1();
+}
