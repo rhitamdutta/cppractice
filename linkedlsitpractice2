@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+
+class linkedlist
+{
+public:
+    struct node
+    {
+        int rno,marks;
+        node *link;
+    };
+    struct node *start;
+
+    linkedlist()
+    {
+        start=NULL;
+    }
+    void insert_beg(int , int);
+    void traverse();
+};
+
+void linkedlist::traverse()
+{
+    node *p=start;
+    if(start==NULL)
+    {
+        cout<<"empty linked lsit"<<endl;
+    }
+    else
+    {
+        while(p!=NULL)
+        {
+            cout<<p->rno<<"             "<<p->marks<<endl;
+            p=p->link;
+        }
+    }
+}
+
+void linkedlist::insert_beg(int r, int m)
+{
+    node *t=new node;
+    t->rno=r;
+    t->marks=m;
+    t->link=NULL;
+
+    if(start==NULL)
+        start=t;
+    else
+    {
+        t->link=start;
+        start=t;
+    }
+}
+int main()
+{
+    linkedlist l;
+    l.insert_beg(2,34);
+        l.insert_beg(8,37);
+        l.traverse();
+}
